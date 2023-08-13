@@ -1,0 +1,26 @@
+name: jawal_flutter
+description: Jawal SDK Location for flutter
+version: 1.0.0
+homepage: https://jawal.yastack.app
+
+environment:
+  sdk: '>=2.19.6 <4.0.0'
+  flutter: ">=2.5.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.yastack.jawal_flutter
+        pluginClass: JawalFlutterPlugin
+      ios:
+        pluginClass: JawalFlutterPlugin
