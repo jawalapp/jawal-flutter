@@ -8,7 +8,6 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockJawalFlutterPlatform
     with MockPlatformInterfaceMixin
     implements JPlatformInterface {
-
   @override
   Future<void> init(JawalConfig config) {
     return Future.value();
@@ -23,7 +22,6 @@ class MockJawalFlutterPlatform
   Future<void> stopTracking() {
     return Future.value(null);
   }
-
 
   @override
   Future<PermissionStatus> backgroundLocationPermissionStatus() {
@@ -63,14 +61,9 @@ class MockJawalFlutterPlatform
 }
 
 void main() {
+  test('init', () async {});
 
+  test('startTracking', () async {});
 
-  test('init', () async {
-  });
-
-  test('startTracking', () async {
-  });
-
-  test('stopTracking', () async {
-  });
+  test('stopTracking', () async {});
 }
