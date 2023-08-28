@@ -6,7 +6,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  jawal_flutter_sdk: ^1.0.0
+  jawal_flutter_sdk: ^1.0.4
 ```
 
 ### Android

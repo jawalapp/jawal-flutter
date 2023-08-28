@@ -8,6 +8,6 @@
 
 * Change: Readme and changelog
 
-## 1.0.4
+## 1.0.2
 
 * Change: Update the Android SDK dependency to 1.0.0-beta4
