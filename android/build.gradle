@@ -41,5 +41,5 @@ android {
 }
 
 dependencies {
-    implementation 'com.yastack:jawal:1.0.0-beta03'
+    implementation 'com.yastack:jawal:1.0.0-beta04'
 }
