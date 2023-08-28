@@ -1,6 +1,6 @@
 name: jawal_flutter
 description: Jawal is an SDK that allows you to track user's location in real time with high accuracy and low battery consumption.
-version: 1.0.4
+version: 1.0.2
 homepage: https://jawal.yastack.app
 
 environment:
