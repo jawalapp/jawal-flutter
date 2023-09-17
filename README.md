@@ -22,7 +22,21 @@ The Package adds this permissions to your Android Manifest:
 
 ### iOS
 
-iOS is not supported yet!
+Add the following to your Info.plist file:
+
+```xml
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>YOUR_LOCATION_DESCRIPTION</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>YOUR_LOCATION_DESCRIPTION</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>YOUR_LOCATION_DESCRIPTION</string>
+```
+
+If you plan to keep tracking while the app is in background, you need to enable the "Background Modes" capability and check these two options:
+
+* Location updates
+* Background fetch
 
 ## Usage
 
@@ -42,7 +56,7 @@ JawalConfig config = JawalConfig(
         }
     },
 );
-JawalFlutterSdk.init(config);
+Jawal.init(config);
 ```
 
 `USER_UNIQUE_ID`: A unique ID for the user, it can be the user ID in your database
