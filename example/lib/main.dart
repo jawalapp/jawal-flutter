@@ -42,8 +42,8 @@ class _MyAppState extends State<MyApp> {
 
   void initJawalFlutter() async {
     JawalConfig config = JawalConfig(
-      apiKey: "5f1542ee8295f05f67672886251c6c41a6150851",
-      userId: "test_flutter_1",
+      apiKey: "YOUR_API_KEY",
+      userId: "USER_UNIQUE_ID",
       userDescription: "USER_DESCRIPTION", //Optional
       onInitResult: (InitResultEvent event) {
         setState(() {

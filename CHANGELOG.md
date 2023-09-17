@@ -11,3 +11,8 @@
 ## 1.0.2
 
 * Change: Update the Android SDK dependency to 1.0.0-beta4
+
+## 1.0.3
+
+* Change: Update the Android SDK dependency to 0.0.1
+* Add: iOS Support
