@@ -28,7 +28,7 @@ public class JawalMethodCallsHandler implements MethodChannel.MethodCallHandler 
                 init(call, result);
                 break;
             case "startTracking":
-                Jawal.startTracking();
+                startTracking(call, result);
                 result.success(null);
                 break;
             case "stopTracking":
@@ -79,6 +79,16 @@ public class JawalMethodCallsHandler implements MethodChannel.MethodCallHandler 
         Jawal.onLocationChange(l -> {
             new Handler(Looper.getMainLooper()).post(() -> channel.invokeMethod("onLocationChange", l.toJson()));
         });
+        result.success(null);
+    }
+
+    private void startTracking(MethodCall call, MethodChannel.Result result) {
+        String sessionId = call.argument("sessionId");
+        if (sessionId != null) {
+            Jawal.startTracking(sessionId);
+        }else{
+            Jawal.startTracking();
+        }
         result.success(null);
     }
 }

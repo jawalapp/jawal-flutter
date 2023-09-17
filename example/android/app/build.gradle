@@ -54,12 +54,13 @@ android {
         }
     }
 
-    lintOptions {
-        disable 'InvalidPackage'
-    }
 
     dependencies {
         implementation("androidx.multidex:multidex:2.0.1")  // with androidx libraries
+    }
+    namespace 'com.yastack.jawal_flutter_example'
+    lint {
+        disable 'InvalidPackage'
     }
 }
 

@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:7.2.2'
     }
 }
 
@@ -26,10 +26,11 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 31
+    namespace 'com.yastack.jawal_flutter'
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     defaultConfig {
@@ -41,5 +42,5 @@ android {
 }
 
 dependencies {
-    implementation 'com.yastack:jawal:1.0.0-beta04'
+    implementation 'com.yastack:jawal:0.0.2'
 }

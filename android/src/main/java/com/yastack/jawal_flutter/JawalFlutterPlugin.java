@@ -1,21 +1,14 @@
 package com.yastack.jawal_flutter;
 
-import static android.content.pm.PackageManager.PERMISSION_DENIED;
-import static android.content.pm.PackageManager.PERMISSION_GRANTED;
-
 import android.app.Activity;
 import androidx.annotation.NonNull;
 
-import com.yastack.jawal.JawalUtils;
-
-import java.security.Permission;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.common.StandardMethodCodec;
 
 /** JawalFlutterPlugin */
