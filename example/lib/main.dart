@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
 
   void toggleTracking() async {
     Jawal.isTracking().then((value) => {
-          if (value) {Jawal.stopTracking()} else {Jawal.startTracking()}
+          if (value) {Jawal.stopTracking()} else {Jawal.startTracking("YOUR_SESSION_ID")}
         });
     setState(() {
       _tracking = !_tracking;

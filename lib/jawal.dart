@@ -22,8 +22,8 @@ class Jawal {
 
   /// Start tracking the user location
   /// @return Future<void>
-  static Future<void> startTracking() async {
-    await JPlatformInterface.instance.startTracking();
+  static Future<void> startTracking([String? sessionId]) async {
+    await JPlatformInterface.instance.startTracking(sessionId);
   }
 
   /// Stop tracking the user location

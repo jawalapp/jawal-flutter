@@ -23,8 +23,8 @@ abstract class JPlatformInterface extends PlatformInterface {
     return JPlatformInterface.instance.init(config);
   }
 
-  Future<void> startTracking() {
-    return JPlatformInterface.instance.startTracking();
+  Future<void> startTracking([String? sessionId]) {
+    return JPlatformInterface.instance.startTracking(sessionId);
   }
 
   Future<void> stopTracking() {
