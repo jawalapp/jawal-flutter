@@ -8,9 +8,7 @@ import 'package:jawal_flutter/jawal_config.dart';
 import 'package:jawal_flutter/models/permission_status.dart';
 import 'j_platform_interface.dart';
 
-
 class JMethodChannel extends JPlatformInterface {
-
   @visibleForTesting
   final methodChannel = const MethodChannel('jawal_flutter');
   Function(LocationChangeEvent)? _onLocationChange;
@@ -19,7 +17,7 @@ class JMethodChannel extends JPlatformInterface {
 
   @override
   Future<void> init(JawalConfig config) async {
-    try{
+    try {
       final configMap = <String, dynamic>{
         'sdkKey': config.apiKey,
         'userId': config.userId,
@@ -29,31 +27,34 @@ class JMethodChannel extends JPlatformInterface {
       methodChannel.setMethodCallHandler((call) async {
         handlePlatformCalls(call, config);
       });
-    }catch(e){
-      config.onInitResult!(InitResultEvent(isSuccessful: false, error: e.toString()));
+    } catch (e) {
+      config.onInitResult!(
+          InitResultEvent(isSuccessful: false, error: e.toString()));
     }
   }
-
-
 
   void handlePlatformCalls(MethodCall call, JawalConfig config) async {
     switch (call.method) {
       case "onInitResult":
         if (config.onInitResult != null) {
-          InitResultEvent event = InitResultEvent.fromJson(jsonDecode(call.arguments));
+          InitResultEvent event =
+              InitResultEvent.fromJson(jsonDecode(call.arguments));
           config.onInitResult!(event);
         }
         break;
       case "onLocationChange":
         if (_onLocationChange != null) {
-          _onLocationChange!(LocationChangeEvent.fromJson(jsonDecode(call.arguments)));
+          _onLocationChange!(
+              LocationChangeEvent.fromJson(jsonDecode(call.arguments)));
         }
         break;
       case "onLocationPermissionResult":
-        _foregroundLocationPermissionCompleter?.complete(PermissionStatus.fromJson(jsonDecode(call.arguments)));
+        _foregroundLocationPermissionCompleter
+            ?.complete(PermissionStatus.fromJson(jsonDecode(call.arguments)));
         break;
       case "onBackgroundLocationPermissionResult":
-        _backgroundLocationPermissionCompleter?.complete(PermissionStatus.fromJson(jsonDecode(call.arguments)));
+        _backgroundLocationPermissionCompleter
+            ?.complete(PermissionStatus.fromJson(jsonDecode(call.arguments)));
         break;
       default:
         throw MissingPluginException();
@@ -72,7 +73,7 @@ class JMethodChannel extends JPlatformInterface {
   }
 
   @override
-  Future<void> startTracking() async {
+  Future<void> startTracking([String? sessionId]) async {
     await methodChannel.invokeMethod<void>("startTracking");
   }
 
@@ -97,14 +98,15 @@ class JMethodChannel extends JPlatformInterface {
 
   @override
   Future<PermissionStatus> backgroundLocationPermissionStatus() async {
-    final String status = await methodChannel.invokeMethod("getBackgroundLocationPermissionStatus");
+    final String status = await methodChannel
+        .invokeMethod("getBackgroundLocationPermissionStatus");
     return PermissionStatus.fromJson(jsonDecode(status));
   }
 
   @override
   Future<PermissionStatus> foregroundLocationPermissionStatus() async {
-    final String status = await methodChannel.invokeMethod("getLocationPermissionStatus");
+    final String status =
+        await methodChannel.invokeMethod("getLocationPermissionStatus");
     return PermissionStatus.fromJson(jsonDecode(status));
   }
-
 }

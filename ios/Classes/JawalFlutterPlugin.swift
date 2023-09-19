@@ -16,21 +16,20 @@ public class JawalFlutterPlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
       
       switch(call.method){
-          
-        case "init":
-          self.callInit(call, result)
-          break
-      case "startTracking":
-        self.callStartTracking(call, result)
-          break
-      case "stopTracking":
-        self.callStopTracking(call, result)
-          break
-      case "isTracking":
-        self.callIsTracking(call, result)
-          break
-      default:
-          print("Unexpected call method")
+          case "init":
+            self.callInit(call, result)
+            break
+          case "startTracking":
+            self.callStartTracking(call, result)
+            break
+          case "stopTracking":
+            self.callStopTracking(call, result)
+            break
+          case "isTracking":
+            self.callIsTracking(call, result)
+            break
+              default:
+              print("Unexpected call method \(call.method)")
       }
   }
     
@@ -59,7 +58,9 @@ public class JawalFlutterPlugin: NSObject, FlutterPlugin {
                 if let channel = JawalFlutterPlugin.channel {
                     let encoder = JSONEncoder()
                     if let json = try? encoder.encode(response) {
-                        channel.invokeMethod("onInitResult", arguments: String(data:json, encoding: .utf8))
+                        DispatchQueue.main.async {
+                            channel.invokeMethod("onInitResult", arguments: String(data:json, encoding: .utf8))
+                        }
                     }
                 }
                 print("result \(initResult)")

@@ -14,7 +14,7 @@ class MockJawalFlutterPlatform
   }
 
   @override
-  Future<void> startTracking() {
+  Future<void> startTracking([String? sessionId]) {
     return Future.value(null);
   }
 
