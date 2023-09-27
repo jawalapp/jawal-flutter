@@ -51,9 +51,9 @@ public class JawalFlutterPlugin: NSObject, FlutterPlugin {
                 conf.description = userDescription
                 conf.enable_background_tracking = true //TODO: change
             }completion: { initResult in
-                //TODO: send to dart
                 
-                let response = InitResult(error: "", isSuccessful: initResult, User: nil)
+                
+                let response = InitResult(error: initResult.error, isSuccessful: initResult.isSuccessful)
                 
                 if let channel = JawalFlutterPlugin.channel {
                     let encoder = JSONEncoder()
@@ -98,5 +98,4 @@ public class JawalFlutterPlugin: NSObject, FlutterPlugin {
 struct InitResult:Codable {
     let error: String
     let isSuccessful: Bool
-    let User: String?
 }
