@@ -51,8 +51,6 @@ public class JawalFlutterPlugin: NSObject, FlutterPlugin {
                 conf.description = userDescription
                 conf.enable_background_tracking = true //TODO: change
             }completion: { initResult in
-                
-                
                 let response = InitResult(error: initResult.error, isSuccessful: initResult.isSuccessful)
                 
                 if let channel = JawalFlutterPlugin.channel {

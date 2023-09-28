@@ -25,3 +25,7 @@
 ## 1.0.5
 
 * Fix: Get the InitResultEvent object from iOS (instead of an empty string)
+
+## 1.0.6 
+
+* Change: update to jawal-ios 0.0.3
