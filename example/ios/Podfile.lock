@@ -1,9 +1,9 @@
 PODS:
   - Flutter (1.0.0)
-  - jawal-ios (0.0.3)
+  - jawal-ios (0.0.5)
   - jawal_flutter (0.0.1):
     - Flutter
-    - jawal-ios (~> 0.0.3)
+    - jawal-ios (~> 0.0.5)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -21,8 +21,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  jawal-ios: eabcb89fdb0cc4dd581c2b45bd2b27a3fb83eda7
-  jawal_flutter: 170ef327df0358fcdae00752c7816b87b90b9734
+  jawal-ios: 9fe5eadde72e30d309c459e979fc5029e549bd78
+  jawal_flutter: a90a773da606ded5598eafa916477f0fab87b308
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 

@@ -29,3 +29,12 @@
 ## 1.0.6 
 
 * Change: update to jawal-ios 0.0.3
+
+## 1.0.7
+
+* Change: update to jawal-ios 0.0.4
+
+## 1.0.8
+
+* Change: update to jawal-ios 0.0.5
+* Fix: enable_background_tracking default to true for now to fix random interruptions whilte in bg
